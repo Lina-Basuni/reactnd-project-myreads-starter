@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+import mainPage from './mainPage';
+import searchPage from './searchPage';
+
 // import * as BooksAPI from './BooksAPI'
-import './App.css'
+import './App.css';
 
 class BooksApp extends React.Component {
   state = {
