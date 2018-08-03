@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import MainPage from './MainPage';
 import Book from './Book';
 
 class SearchPage extends Component{

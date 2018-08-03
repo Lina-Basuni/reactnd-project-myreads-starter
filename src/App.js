@@ -2,6 +2,9 @@ import React from 'react';
 
 import MainPage from './MainPage';
 import SearchPage from './SearchPage';
+import Shelf from './Shelf';
+import Book from './Book';
+
 
 import * as BooksAPI from './BooksAPI'
 import './App.css';

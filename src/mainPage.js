@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+import SearchPage from './SearchPage';
+import Shelf from './Shelf';
 import Book from './Book';
-import Shelf from './Shelf'
 
 class MainPage extends Component{
 
+
   render(){
+
     return(
       <div className='main-page'>
         <div className="list-books">
@@ -14,9 +17,33 @@ class MainPage extends Component{
           </div>
           <div className="list-books-content">
             <div>
-              <Shelf shelfName="Currently Reading"/>
-              <Shelf shelfName="Want To Read"/>
-              <Shelf shelfName="Read"/>
+              <Shelf books={
+                this.props.books
+                .filter(
+                  (book) => (
+                    book.shelf === "currentlyReading"
+                  )
+              )}
+              shelfName="Currently Reading"/>
+
+              <Shelf books={
+                this.props.books
+                .filter(
+                  (book) => (
+                    book.shelf === "wantToRead"
+                  )
+              )}
+              shelfName="Want To Read"/>
+
+              <Shelf books={
+                this.props.books
+                .filter(
+                  (book) => (
+                    book.shelf === "read"
+                  )
+              )}
+              shelfName="Read"/>
+
             </div>
           </div>
           <div className="open-search">
