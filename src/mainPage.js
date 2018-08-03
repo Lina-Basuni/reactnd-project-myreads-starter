@@ -24,7 +24,8 @@ class MainPage extends Component{
                     book.shelf === "currentlyReading"
                   )
               )}
-              shelfName="Currently Reading"/>
+              shelfName="Currently Reading"
+              moveBooks={this.props.moveBooks}/>
 
               <Shelf books={
                 this.props.books
@@ -33,7 +34,8 @@ class MainPage extends Component{
                     book.shelf === "wantToRead"
                   )
               )}
-              shelfName="Want To Read"/>
+              shelfName="Want To Read"
+              moveBooks={this.props.moveBooks}/>
 
               <Shelf books={
                 this.props.books
@@ -42,7 +44,8 @@ class MainPage extends Component{
                     book.shelf === "read"
                   )
               )}
-              shelfName="Read"/>
+              shelfName="Read"
+              moveBooks={this.props.moveBooks}/>
 
             </div>
           </div>
