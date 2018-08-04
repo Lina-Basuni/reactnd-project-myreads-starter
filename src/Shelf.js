@@ -16,6 +16,7 @@ class Shelf extends Component {
               (book) => (
               <li key={book.id}>
                 <Book
+                  book={book}
                   bookImgLink={book.imageLinks.thumbnail}
                   bookTitle={book.title}
                   bookAuthors={book.authors}

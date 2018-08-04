@@ -45,7 +45,8 @@ class MainPage extends Component{
                   )
               )}
               shelfName="Read"
-              moveBooks={this.props.moveBooks}/>
+              moveBooks={this.props.moveBooks}
+              />
 
             </div>
           </div>
