@@ -11,7 +11,9 @@ import './App.css';
 
 class BooksApp extends React.Component {
   state={
-    books:[]
+    books:[],
+    searchedBooks:[],
+    query:''
 
   }
   getBooks=()=>{
@@ -29,11 +31,25 @@ class BooksApp extends React.Component {
     this.getBooks()
   }
 
+  changeQuery=(query)=>{
+    this.setState({query:query})
+  }
+
+  searchBooks=(query)=>{
+    BooksAPI.search(query).then((searchedBooks)=>{
+      this.setState({ searchedBooks:searchedBooks })
+    })
+  }
+
   render() {
     return (
       <div className="app">
-        <MainPage books={this.state.books}
-        moveBooks={this.moveBooks}/>
+        <SearchPage
+          searchedBooks={this.state.searchedBooks}
+          query={this.state.query}
+          searchBooks={this.searchBooks}
+          changeQuery={this.changeQuery}
+        />
       </div>
     )
   }
