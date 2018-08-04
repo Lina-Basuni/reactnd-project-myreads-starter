@@ -6,6 +6,7 @@ import Book from './Book';
 class SearchPage extends Component{
 
   render(){
+
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -18,11 +19,6 @@ class SearchPage extends Component{
               onChange={
                 (event)=>{
                   this.props.changeQuery(event.target.value)
-                  if (this.props.query && this.props.query.length >= 1) {
-                    if (this.props.query.length % 2 === 0) {
-                      this.props.searchBooks(event.target.value)
-                    }
-                  }
                 }
               }
             />
@@ -35,15 +31,20 @@ class SearchPage extends Component{
           {
             this.props.searchedBooks
             .map(
-              (book) => (
-              <li key={book.id}>
+              (searchedBook) => (
+              <li key={searchedBook.id}>
                 <Book
-                  book={book}
-                  bookImgLink={book.imageLinks.thumbnail}
-                  bookTitle={book.title}
-                  bookAuthors={book.authors}
-                  bookId={book.id}
-                  bookShelf={book.shelf}
+                  thumbnail={
+                    searchedBook.imageLinks?
+                    searchedBook.imageLinks.thumbnail :
+                    ''
+                  }
+                  book={searchedBook}
+
+                  bookTitle={searchedBook.title}
+                  bookAuthors={searchedBook.authors}
+                  bookId={searchedBook.id}
+                  bookShelf={searchedBook.shelf}
                   moveBooks={this.props.moveBooks}
                 />
               </li>

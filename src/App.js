@@ -33,22 +33,40 @@ class BooksApp extends React.Component {
 
   changeQuery=(query)=>{
     this.setState({query:query})
+    this.searchBooks(query)
   }
 
   searchBooks=(query)=>{
-    BooksAPI.search(query).then((searchedBooks)=>{
-      this.setState({ searchedBooks:searchedBooks })
-    })
+    if(query){
+      BooksAPI.search(query).then((searchedBooks)=>{
+        if(searchedBooks.error){
+          this.setState({searchedBooks:[]})
+        }
+        else{
+          this.setState({ searchedBooks:searchedBooks })
+        }
+      })
+    }else{
+      this.setState({searchedBooks:[]})
+    }
+
   }
 
   render() {
     return (
       <div className="app">
+        {/*
+        <MainPage
+          books={this.state.books}
+          moveBooks={this.moveBooks}
+        />
+        */}
         <SearchPage
           searchedBooks={this.state.searchedBooks}
           query={this.state.query}
           searchBooks={this.searchBooks}
           changeQuery={this.changeQuery}
+          moveBooks={this.moveBooks}
         />
       </div>
     )
