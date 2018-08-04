@@ -12,16 +12,21 @@ import './App.css';
 class BooksApp extends React.Component {
   state={
     books:[]
-  }
 
-  componentDidMount() {
+  }
+  getBooks=()=>{
     BooksAPI.getAll().then((books) => {
       this.setState({ books:books })
     })
   }
 
+  componentDidMount() {
+    this.getBooks()
+  }
+
   moveBooks=(book,shelf)=>{
     BooksAPI.update(book,shelf)
+    this.getBooks()
   }
 
   render() {
