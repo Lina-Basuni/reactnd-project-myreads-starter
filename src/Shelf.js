@@ -21,6 +21,7 @@ class Shelf extends Component {
                   bookTitle={book.title}
                   bookAuthors={book.authors}
                   bookId={book.id}
+                  bookShelf={book.shelf}
                   moveBooks={this.props.moveBooks}
                 />
               </li>
