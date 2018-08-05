@@ -28,8 +28,9 @@ class BooksApp extends React.Component {
   }
 
   moveBooks=(book,shelf)=>{
-    BooksAPI.update(book,shelf)
-    this.getBooks()
+    BooksAPI.update(book,shelf).then(()=>{
+      this.getBooks()
+    })
   }
 
   changeQuery=(query)=>{

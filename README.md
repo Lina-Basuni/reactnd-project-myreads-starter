@@ -22,6 +22,7 @@ To get started using the app right away:
 
 * clone the app by running `https://github.com/Lina-Basuni/reactnd-project-myreads-starter.git` on your terminal
 * cd into the app repository you created
+* install the Apps dependencies with `npm install` or `yarn install`
 * start the development server with `npm start` or `yarn start`
 
 ## Backend Server
