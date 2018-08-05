@@ -20,8 +20,9 @@ lets you categorize your books into three categories :
 
 To get started using the app right away:
 
+* clone the app by running `https://github.com/Lina-Basuni/reactnd-project-myreads-starter.git` on your terminal
+* cd into the app repository you created
 * start the development server with `npm start` or `yarn start`
-* Or you can view it online on that link :
 
 ## Backend Server
 
