@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import SearchPage from './SearchPage';
 import Shelf from './Shelf';
@@ -51,7 +52,11 @@ class MainPage extends Component{
             </div>
           </div>
           <div className="open-search">
-            <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+            <Link
+            to='/search'
+            className="search-btn">
+              Add a book
+            </Link>
           </div>
         </div>
       </div>
