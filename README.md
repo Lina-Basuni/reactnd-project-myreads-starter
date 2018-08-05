@@ -16,7 +16,7 @@ lets you categorize your books into three categories :
 * Similarly there is a drop down list on each book on the search results that lets you choose the shelf for that book
 * When you choose the shelf the book is moved to that shelf on the main page
 
-## TL;DR
+## Installing the App
 
 To get started using the app right away:
 
