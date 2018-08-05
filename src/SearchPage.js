@@ -37,24 +37,31 @@ class SearchPage extends Component{
           {
             this.props.searchedBooks
             .map(
-              (searchedBook) => (
-              <li key={searchedBook.id}>
-                <Book
-                  thumbnail={
-                    searchedBook.imageLinks?
-                    searchedBook.imageLinks.thumbnail :
-                    ''
-                  }
-                  book={searchedBook}
+              (searchedBook) => {
+                let shelf="none"
+                this.props.books.map((book)=>(
+                  book.id=== searchedBook.id?
+                  shelf= book.shelf:''
+                ));
+                return(
+                  <li key={searchedBook.id}>
+                    <Book
+                      thumbnail={
+                        searchedBook.imageLinks?
+                        searchedBook.imageLinks.thumbnail :
+                        ''
+                      }
+                      book={searchedBook}
 
-                  bookTitle={searchedBook.title}
-                  bookAuthors={searchedBook.authors}
-                  bookId={searchedBook.id}
-                  bookShelf={searchedBook.shelf}
-                  moveBooks={this.props.moveBooks}
-                />
+                      bookTitle={searchedBook.title}
+                      bookAuthors={searchedBook.authors}
+                      bookId={searchedBook.id}
+                      bookShelf={shelf}
+                      moveBooks={this.props.moveBooks}
+                  />
               </li>
-              )
+                )
+              }
             )
 
           }

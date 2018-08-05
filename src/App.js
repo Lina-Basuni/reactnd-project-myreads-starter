@@ -42,13 +42,16 @@ class BooksApp extends React.Component {
       BooksAPI.search(query).then((searchedBooks)=>{
         if(searchedBooks.error){
           this.setState({searchedBooks:[]})
+          this.getBooks()
         }
         else{
           this.setState({ searchedBooks:searchedBooks })
+          this.getBooks()
         }
       })
     }else{
       this.setState({searchedBooks:[]})
+      this.getBooks()
     }
 
   }
@@ -67,6 +70,7 @@ class BooksApp extends React.Component {
             searchedBooks={this.state.searchedBooks}
             query={this.state.query}
             searchBooks={this.searchBooks}
+            books={this.state.books}
             changeQuery={this.changeQuery}
             moveBooks={this.moveBooks}
           />

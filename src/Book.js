@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import SearchPage from './SearchPage';
 import Shelf from './Shelf';
 
 class Book extends Component{
@@ -13,6 +14,7 @@ class Book extends Component{
             <select onChange={
               (event)=>{
                 this.props.moveBooks(this.props.book,event.target.value)
+
               }
             }
             value={this.props.bookShelf}
