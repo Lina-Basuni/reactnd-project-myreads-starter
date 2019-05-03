@@ -41,8 +41,3 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 * The Backend server was provided for me by Udacity
 * The HTML and CSS of the app was provided for me by Udacity
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
